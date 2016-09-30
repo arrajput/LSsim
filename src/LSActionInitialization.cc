@@ -16,11 +16,11 @@ LSActionInitialization::~LSActionInitialization()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void LSActionInitialization::BuildForMaster() const
+/*void LSActionInitialization::BuildForMaster() const
 {
   //LSRunAction* runAction = new LSRunAction;
   //SetUserAction(runAction);
-}
+}*/
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 

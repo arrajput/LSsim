@@ -11,6 +11,8 @@
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4Color.hh"
+#include "G4VisAttributes.hh"
 
 
 LSDetectorConstruction::LSDetectorConstruction()
@@ -78,7 +80,12 @@ G4VPhysicalVolume* LSDetectorConstruction::Construct()
   //create LS cylinder logical volume
   G4LogicalVolume* LSlogvol = new G4LogicalVolume(LSvol, BC501A, "LSvol");
 
-  //place LS cylinder physical volume at origin and unrotated
+  //define vis attributes for LS cylinder logical volume
+  G4VisAttributes * LSlogvolVis = new G4VisAttributes(G4Color::White());
+  LSlogvolVis->SetForceSolid(true);
+  LSlogvol->SetVisAttributes(LSlogvolVis);
+
+  //place unrotated LS cylinder physical volume at origin
   G4VPhysicalVolume* LSphysvol = new G4PVPlacement(0,G4ThreeVector(),LSlogvol,"LSvol",worldLog,false,0,checkOverlaps);
 
 

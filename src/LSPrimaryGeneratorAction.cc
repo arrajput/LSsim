@@ -23,7 +23,7 @@ LSPrimaryGeneratorAction::LSPrimaryGeneratorAction()
    G4String particleName;
    G4ParticleDefinition* particle = particleTable->FindParticle(particleName="neutron");
    fParticleGun->SetParticleDefinition(particle);
-   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
+   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
    fParticleGun->SetParticleEnergy(10.*MeV);
 
  }
@@ -38,9 +38,9 @@ LSPrimaryGeneratorAction::~LSPrimaryGeneratorAction()
 
 void LSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
  {
-   G4double x0 = -0.45*m;
-   G4double y0 = 0;
-   G4double z0 = 0;
+   G4double x0 = -0.5*m;
+   G4double y0 = 0*m;
+   G4double z0 = 0*m;
 
    fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
 
